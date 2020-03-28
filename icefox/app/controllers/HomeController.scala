@@ -17,6 +17,8 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents, c
    * The configuration in the `routes` file means that this method
    * will be called when the application receives a `GET` request with
    * a path of `/`.
+   *
+   * ***Add paget title from config
    */
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index(config.get[String]("pagetitle") ))
