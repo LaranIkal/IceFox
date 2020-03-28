@@ -1,0 +1,40 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(title: String)(content: Html)
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    <head>
+        <title>@title</title>
+
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+        <META HTTP-EQUIV="EXPIRES" CONTENT="0">
+        <META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
+        <META NAME="DISTRIBUTION" CONTENT="GLOBAL">
+        <META NAME="COPYRIGHT" CONTENT="Copyright by Carlos Kassab">
+        <META NAME="KEYWORDS" CONTENT="ETL">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+        <META NAME="REVISIT-AFTER" CONTENT="1 DAYS">
+        <META NAME="RATING" CONTENT="GENERAL">
+        <META NAME="TITLE" CONTENT="IceFox WEB Portal And ETL">
+        <META NAME="DESCRIPTION" CONTENT="IceFox WEB Portal And ETL">
+
+        <link rel="icon" href="@routes.Assets.versioned("images/icefox_blue1.png")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/themes/IceFox/style.css")">
+
+    </head>
+    <body bgcolor="#b8d9ff" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
+
+        @content
+
+      <script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
+      <script src="@routes.Assets.versioned("javascripts/PostAjaxLibrary.js")" type="text/javascript"></script>
+
+
+
+

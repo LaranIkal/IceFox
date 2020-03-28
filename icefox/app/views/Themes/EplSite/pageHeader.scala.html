@@ -1,0 +1,59 @@
+@*
+*******************************************************************************
+*  IceFox page header for EplSite theme
+*  IceFox: Web Portal And ETL
+* Copyright [2020] [Carlos Kassab]
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*******************************************************************************
+Document   : htmlHeader
+Created on : March 21, 2020
+Author     : Carlos Kassab
+*@
+@(content: Html)
+<body bgcolor="#b8d9ff" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
+<table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#ffffff">
+    <tr>
+        <td bgcolor="#3323ff" align="center">
+            <a href="http://savethearctic.org/" target=_blank>
+                <IMG SRC="/assets/images/icefox_white.png" NAME="Save The Artic" ALIGN="left" BORDER=0>
+            </a>
+        </td>
+        <td bgcolor="#3323ff" align="center">
+            <P ALIGN=right><font color=white><big><H3>IceFox - WEB Portal And ETL Tool</H3></big></font></p>
+        </td>
+        <td bgcolor="#3323ff">
+            <table align="right" border="0">
+                <tr><td>Here goes the welcome message.</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#FFFFFF">
+    <tr bgcolor="#FFF5E0">
+        <th align="left">
+            <ul id="nav">
+                <li><a href="index.jsp" title="Home">Home</a></li>
+                <li><a href="">Modules List</a>
+                    <ul>
+                        <li>Here goes the modules list</li>
+                    </ul>
+                </li>
+            </ul>
+        </th></tr></table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+    <tr valign="top">
+        <td valign="top" width="100%">
+
+            @content
+
