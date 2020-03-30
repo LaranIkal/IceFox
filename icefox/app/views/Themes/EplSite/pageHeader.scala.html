@@ -1,7 +1,8 @@
+
 @*
 *******************************************************************************
-*  IceFox page header for EplSite theme
-*  IceFox: Web Portal And ETL
+* IceFox page header for EplSite theme
+* IceFox: Web Portal And ETL
 * Copyright [2020] [Carlos Kassab]
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,11 +17,14 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 *******************************************************************************
-Document   : htmlHeader
-Created on : March 21, 2020
-Author     : Carlos Kassab
+* Document   : htmlHeader
+* Created on : March 21, 2020
+* Author     : Carlos Kassab
 *@
-@(content: Html)
+
+
+@(sections: String, loginSection: String)(content: Html)
+
 <body bgcolor="#b8d9ff" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
 <table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#ffffff">
     <tr>
@@ -34,7 +38,9 @@ Author     : Carlos Kassab
         </td>
         <td bgcolor="#3323ff">
             <table align="right" border="0">
-                <tr><td>Here goes the welcome message.</td></tr>
+                <tr><td>
+                    @Html(loginSection)
+                </td></tr>
             </table>
         </td>
     </tr>
@@ -43,10 +49,10 @@ Author     : Carlos Kassab
     <tr bgcolor="#FFF5E0">
         <th align="left">
             <ul id="nav">
-                <li><a href="index.jsp" title="Home">Home</a></li>
+                <li><a href="/" title="Home">Home</a></li>
                 <li><a href="">Modules List</a>
                     <ul>
-                        <li>Here goes the modules list</li>
+                        @Html(sections)
                     </ul>
                 </li>
             </ul>

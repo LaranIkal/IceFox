@@ -1,16 +1,13 @@
-@(pageTitle: String)
+@(pageTitle: String, sectionList: String, loginSection: String)
 
 @import Themes.EplSite._
 
-@*
-* @htmlHeader("IceFox ETL")
-*@
-
 @htmlHeader(pageTitle)
 
-@pageHeader{
-<h1>Welcome to IceFox ETL!</h1>
+@pageHeader(sectionList, loginSection) {
+<h1>Welcome to IceFox!</h1>
 }
+
 @pageFooter()
 
 
