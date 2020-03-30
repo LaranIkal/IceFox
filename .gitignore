@@ -1,3 +1,7 @@
 
 .idea/
 
+
+icefox/Storage/IceFox/log/
+
+icefox/Storage/derby.log
