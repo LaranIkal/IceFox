@@ -6,10 +6,10 @@ REM set ICEFOXBASE=%CD%
 REM set ICEFOXBASE=C:\Apps
 
 REM ############# SET DERBY PARAMETERS
-REM set DERBY_HOME=%ICEFOXBASE%\db-derby-10.14.2.0-bin
+set DERBY_HOME=C:\Apps\db-derby-10.14.2.0-bin
 REM DERBY DEFAULT PORT IS 1527
 set DERBY_PORT=9393
-REM set PATH=%DERBY_HOME%\bin:%PATH%
+set PATH=%DERBY_HOME%\bin:%PATH%
 
 
 rem For embedded connection

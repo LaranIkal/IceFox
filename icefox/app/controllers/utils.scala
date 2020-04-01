@@ -27,7 +27,7 @@ class utils @Inject() (db: Database, config: Configuration ) {
           } else {
             sectionTitle = rs.getString("title")
           }
-          sections += "<li><a href=\"" + rs.getString("title") + "\">" + sectionTitle + "</a></li>"
+          sections += "<li><a href=\"/" + rs.getString("title") + "\">" + sectionTitle + "</a></li>"
         }
 
       } finally {

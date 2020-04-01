@@ -22,11 +22,6 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents, c
    */
   def index() = Action { implicit request: Request[AnyContent] =>
     val mySectionList: String = myUtils.IceFoxSections()
-    var loginScreen = "<form action=\"/login\" method=\"post\">"
-    loginScreen += "<input type=\"text\" name=\"username\" value=\"\" SIZE=\"20\" MAXLENGTH=\"100\"><br>"
-    loginScreen += "<input type=\"password\" name=\"upassword\" value=\"\" SIZE=\"20\" MAXLENGTH=\"18\">"
-    loginScreen += "<input type=\"hidden\" name=\"theoption\" value=\"login\">"
-    loginScreen += "<input type=\"submit\" value=\"Login\"> </form>"
 
     request.session
       .get("connected")
@@ -34,7 +29,7 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents, c
         Ok(views.html.index(config.get[String]("pagetitle"), mySectionList,"Hello " + user ))
       }
       .getOrElse {
-        Unauthorized(views.html.index(config.get[String]("pagetitle"), mySectionList, loginScreen ))
+        Unauthorized(views.html.index(config.get[String]("pagetitle"), mySectionList, "" ))
       }
 
     //Ok(views.html.index(config.get[String]("pagetitle"), mySectionList ))

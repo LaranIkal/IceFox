@@ -39,7 +39,16 @@
         <td bgcolor="#3323ff">
             <table align="right" border="0">
                 <tr><td>
-                    @Html(loginSection)
+                    @if(loginSection.isEmpty) {
+                        <form action="/icefoxlogin" method="post">
+                            <input type="text" name="username" value="" SIZE="20" MAXLENGTH="100"><br>
+                            <input type="password" name="upassword" value="" SIZE="20" MAXLENGTH="18">
+                            <input type="hidden" name="theoption" value="login">
+                            <input type="submit" value="Login">
+                        </form>
+                    } else {
+                        @Html(loginSection)
+                    }
                 </td></tr>
             </table>
         </td>
@@ -52,7 +61,7 @@
                 <li><a href="/" title="Home">Home</a></li>
                 <li><a href="">Modules List</a>
                     <ul>
-                        @Html(sections)
+                       @Html(sections)
                     </ul>
                 </li>
             </ul>
