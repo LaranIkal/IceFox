@@ -22,6 +22,7 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents, c
    */
   def index() = Action { implicit request: Request[AnyContent] =>
     val mySectionList: String = myUtils.IceFoxSections()
+    //val userCreated = myUtils.CreateUser("Carlos Kassab", "laran.ikal@gmail.com", "icefox", "icefox", 0)
 
     request.session
       .get("connected")

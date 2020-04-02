@@ -18,7 +18,12 @@ class Authenticate @Inject()(cc: ControllerComponents, config: Configuration, my
         val ifUser = formData.username
         val ifpass = formData.upassword
         val ifOption = formData.theoption
-        Ok(s"IceFox User: $ifUser, Icefox Password: $ifpass , IceFoxOption: $ifOption")
+        if( myUtils.UserLogin(ifUser,ifpass) == "YES" ) {
+          Ok(s"IceFox User VALIDATED: $ifUser, Icefox Password: $ifpass , IceFoxOption: $ifOption")
+        } else {
+          Ok(s"IceFox User: $ifUser, Icefox Password: $ifpass , IceFoxOption: $ifOption")
+        }
+
       }
     )
   }
