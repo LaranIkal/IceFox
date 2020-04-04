@@ -27,7 +27,7 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents, c
     request.session
       .get("connected")
       .map { user =>
-        Ok(views.html.index(config.get[String]("pagetitle"), mySectionList,"Hello " + user ))
+        Ok(views.html.index(config.get[String]("pagetitle"), mySectionList,"Hello " + user + ", Select a section from the menu list."))
       }
       .getOrElse {
         Unauthorized(views.html.index(config.get[String]("pagetitle"), mySectionList, "" ))

@@ -47,7 +47,7 @@
                             <input type="submit" value="Login">
                         </form>
                     } else {
-                        @Html(loginSection)
+                        @Html("<font color=white>" + loginSection + "</font>")
                     }
                 </td></tr>
             </table>
@@ -59,7 +59,7 @@
         <th align="left">
             <ul id="nav">
                 <li><a href="/" title="Home">Home</a></li>
-                <li><a href="">Modules List</a>
+                <li><a href="">Sections List</a>
                     <ul>
                        @Html(sections)
                     </ul>
