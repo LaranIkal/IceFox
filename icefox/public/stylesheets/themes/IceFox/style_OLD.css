@@ -3,7 +3,7 @@ FONT		{FONT-FAMILY: Verdana,Helvetica, Sans Serif; FONT-SIZE: 11px}
 TD		{FONT-FAMILY: Verdana,Helvetica, Sans Serif; FONT-SIZE: 11px}
 BODY		{FONT-FAMILY: Verdana,Helvetica, Sans Serif; FONT-SIZE: 12px}
 P		{FONT-FAMILY: Verdana,Helvetica, Sans Serif; FONT-SIZE: 11px}
-
+DIV		{FONT-FAMILY: Verdana,Helvetica, Sans Serif; FONT-SIZE: 13px}
 INPUT 		{BORDER-TOP-COLOR: #000000; BORDER-LEFT-COLOR: #000000; BORDER-RIGHT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Verdana,Helvetica; BORDER-RIGHT-WIDTH: 1px}
 TEXTAREA	{BORDER-TOP-COLOR: #000000; BORDER-LEFT-COLOR: #000000; BORDER-RIGHT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Verdana,Helvetica; BORDER-RIGHT-WIDTH: 1px}
 SELECT 		{BORDER-TOP-COLOR: #000000; BORDER-LEFT-COLOR: #000000; BORDER-RIGHT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-BOTTOM-WIDTH: 1px; FONT-FAMILY: Verdana,Helvetica; BORDER-RIGHT-WIDTH: 1px}
@@ -13,7 +13,6 @@ A:active        {BACKGROUND: none; COLOR: #363636; FONT-SIZE: 11px; FONT-FAMILY:
 A:visited       {BACKGROUND: none; COLOR: #363636; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, Sans Serif; TEXT-DECORATION: underline}
 A:hover         {BACKGROUND: none; COLOR: #ff0000; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, Sans Serif; TEXT-DECORATION: underline}
 .title 		{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 14px; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Helvetica, Sans Serif; TEXT-DECORATION: none}
-.sitetitle 		{text-align: center;BACKGROUND: none; COLOR: #FFFFFF; FONT-SIZE: 18px; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Helvetica, Sans Serif; TEXT-DECORATION: none}
 .content 	{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, Sans Serif}
 .contentb 	{BACKGROUND: #CCCCFF; COLOR: #000000; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Helvetica, Sans Serif}
 .block-title	{BACKGROUND: none; COLOR: #FFFFFF; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Helvetica, Sans Serif}
@@ -24,96 +23,15 @@ A:hover         {BACKGROUND: none; COLOR: #ff0000; FONT-SIZE: 11px; FONT-FAMILY:
 .option 	{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 11px; FONT-WEIGHT: bold; FONT-FAMILY: Verdana, Helvetica, Sans Serif; TEXT-DECORATION: none}
 .tiny		{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 8px; FONT-WEIGHT: normal; FONT-FAMILY: Verdana, Helvetica, Sans Serif; TEXT-DECORATION: none}
 
-
-
-.menucontainer
-{
-	background-color: #3323ff;
-	width: 100%;	
-	padding: 1px;
-	border-radius: 6px;
-	box-sizing: content-box;
-}
-
-.blockdivleft
-{
-	width: 33%;
-	position: relative;	
-	display: inline-block;
-	align-content: left;
-}
-
-.blockdivcenter
-{
-	width: 33%;
-	position: relative;	
-	display: inline-block;
-	align-content: center;
-}
-
-.blockdivright
-{
-	width: 33%;
-	position: relative;	
-	display: inline-block;
-	align-content: flex-end;
-}
-
-.menustyle{
-	background-color: #ffffff;
-	font: bold 14px arial;
-	color: #3323ff;
-
-	position: relative;	
-	display: inline-block;		
-	height: 21px;
-	padding: 1px;
-	border-radius: 6px;
-	box-sizing: content-box;	
-}
-
-.icefoxmenu{
-	background-color: #ffffff;
-	position: relative;	
-	display: inline-block;
-	height: 21px;
-	padding: 1px;
-	border-radius: 6px;
-	box-sizing: content-box;
-}
-
-
-.icefoxmenu-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding: 12px 16px;
-	z-index: 1;
-}
-
-.icefoxmenu:hover .icefoxmenu-content {
-	display: block;
-}
-
-
-
-
-
-
-
 #nav {
-	display: block;
 	list-style: none;
-	margin: 0 auto;
+	margin: 0;
 	padding: 0;
 }
 
 #nav ul {
-	width: 100%;
 	padding: 0;
-	margin:0 auto;
+	margin:0;
 	list-style: none;
 	z-index:99;
 	position:relative;
@@ -125,23 +43,22 @@ A:hover         {BACKGROUND: none; COLOR: #ff0000; FONT-SIZE: 11px; FONT-FAMILY:
 }
 #nav li { /* Appearance settings (eye candy) */
 	position: relative;
-	background: #FFFFFF;
+	background: #E7E7E7;
 /*	background: url(trans/white80.png);*/
 	color: #00F;
-	border: none;
+	border: solid 1px #AAA;
 	height: auto;
 	max-width: 8em;
 	overflow: visible;
 }
 #nav ul ul {
 	width: 8em;
-	border: none;
 }
 #nav > li {
-	border: none;
-	float:left;
-	list-style-type: none;
-	padding:0;margin:0;background-image:none;
+	margin: 0;
+	float: left;
+	text-align: center;
+	height: 1.6em;
 }
 
 
@@ -295,7 +212,4 @@ border:1px solid;
 background-color:#E4E9E9;
 padding: 1px;
 }
-
-.hidden {display:none;}
-.unhidden {display:block;}
 

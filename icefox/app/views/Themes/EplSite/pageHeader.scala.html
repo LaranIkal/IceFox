@@ -23,52 +23,43 @@
 *@
 
 
-@(sections: String, loginSection: String)(content: Html)
+@(sections: String, loginSection: String, pageContent: String)
 
 <body bgcolor="#b8d9ff" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
-<table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#ffffff">
-    <tr>
-        <td bgcolor="#3323ff" align="center">
-            <a href="http://savethearctic.org/" target=_blank>
-                <IMG SRC="/assets/images/icefox_white.png" NAME="Save The Artic" ALIGN="left" BORDER=0>
-            </a>
-        </td>
-        <td bgcolor="#3323ff" align="center">
-            <P ALIGN=right><font color=white><big><H3>IceFox - WEB Portal And ETL Tool</H3></big></font></p>
-        </td>
-        <td bgcolor="#3323ff">
-            <table align="right" border="0">
-                <tr><td>
+<div class="menucontainer">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#3323ff">
+        <span>&nbsp;</span>
+        <div class="blockdivleft" >
+            <span class="menustyle"><a href="/" title="Home">Home</a></span>&nbsp;
+            <div class="icefoxmenu">
+                <span class="menustyle"><a href="">Modules List</a></span>
+                <div class="icefoxmenu-content">
+                    @Html(sections)
+                </div>
+            </div>
+        </div>
+        <span class="sitetitle"><div class="blockdivcenter">			IceFox ETL			</div>
+			<div class="blockdivright">
                     @if(loginSection.isEmpty) {
                         <form action="/icefoxlogin" method="post">
-                            <input type="text" name="username" value="" SIZE="20" MAXLENGTH="100"><br>
-                            <input type="password" name="upassword" value="" SIZE="20" MAXLENGTH="18">
+                            <font size="9"> User: <input type="text" name="username" value="" SIZE="20" MAXLENGTH="100">
+                            Password: <input type="password" name="upassword" value="" SIZE="20" MAXLENGTH="18"></font>
                             <input type="hidden" name="theoption" value="login">
                             <input type="submit" value="Login">
                         </form>
                     } else {
                         @Html("<font color=white>" + loginSection + "</font>")
                     }
-                </td></tr>
-            </table>
-        </td>
-    </tr>
-</table>
-<table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#FFFFFF">
-    <tr bgcolor="#FFF5E0">
-        <th align="left">
-            <ul id="nav">
-                <li><a href="/" title="Home">Home</a></li>
-                <li><a href="">Sections List</a>
-                    <ul>
-                       @Html(sections)
-                    </ul>
-                </li>
-            </ul>
-        </th></tr></table>
+			   <a href="http://savethearctic.org/" target=_blank><IMG SRC="/assets/images/icefox_white.png" NAME="Save The Artic" ALIGN="right" BORDER=0></a>
+			</div>
+        </span>
+    </table>
+</div>
+
+
 <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
     <tr valign="top">
         <td valign="top" width="100%">
 
-            @content
+            @Html(pageContent)
 

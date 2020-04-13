@@ -22,15 +22,25 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents, c
    */
   def index() = Action { implicit request: Request[AnyContent] =>
     val mySectionList: String = myUtils.IceFoxSections()
+    var myWelcomeMessage: String = myUtils.WelcomeMessage(1)
+
     //val userCreated = myUtils.CreateUser("Carlos Kassab", "laran.ikal@gmail.com", "icefox", "icefox", 0)
 
     request.session
       .get("connected")
       .map { user =>
-        Ok(views.html.index(config.get[String]("pagetitle"), mySectionList,"Hello " + user + ", Select a section from the menu list."))
+        request.session.get("isadmin").map { isadmin =>
+          if( isadmin == "1"){
+            myWelcomeMessage += "<br><a href=\"/ManageMessage/1\">Edit Message</a>"
+          }
+          Ok(views.html.index(config.get[String]("pagetitle"), mySectionList, "Hello " + isadmin + " " + user + ", Select a section from the menu list.", myWelcomeMessage))
+        }
+          .getOrElse{
+            Ok(views.html.index(config.get[String]("pagetitle"), mySectionList, "Hello " + " " + user + ", Select a section from the menu list.", myWelcomeMessage))
+          }
       }
       .getOrElse {
-        Unauthorized(views.html.index(config.get[String]("pagetitle"), mySectionList, "" ))
+        Unauthorized(views.html.index(config.get[String]("pagetitle"), mySectionList, "", "<h1>Welcome to IceFox!</h1>" ))
       }
 
     //Ok(views.html.index(config.get[String]("pagetitle"), mySectionList ))

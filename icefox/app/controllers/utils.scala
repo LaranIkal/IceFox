@@ -29,7 +29,7 @@ class utils @Inject() (db: Database, config: Configuration ) {
         } else {
           sectionTitle = rs.getString("title")
         }
-        sections += "<li><a href=\"/" + rs.getString("title") + "\">" + sectionTitle + "</a></li>"
+        sections += "<p><a href=\"/" + rs.getString("title") + "\">" + sectionTitle + "</a></p>"
       }
 
     } finally {
@@ -37,6 +37,31 @@ class utils @Inject() (db: Database, config: Configuration ) {
     }
 
     return sections
+  }
+
+
+
+  def WelcomeMessage(mid: Int): String = {
+
+    val connection = db.getConnection()
+    var message: String = ""
+
+    try {
+      val stmt = connection.createStatement
+      var dataQuery = "SELECT TITLE, MESSAGE, MESSAGEDATE FROM "
+      dataQuery += config.get[String]("table_prefix") + "_MESSAGE WHERE MESSAGEID=" + mid
+      val rs = stmt.executeQuery(dataQuery)
+
+      while (rs.next()) {
+        message += "<center><font class=\"option\"><b>" + rs.getString("TITLE") + "</b></font></center>"
+        message += "<font class=\"content\">" + rs.getString("MESSAGE") + "</font>"
+      }
+
+    } finally {
+      connection.close() // Close db connection
+    }
+
+    return message
   }
 
 

@@ -1,0 +1,30 @@
+@(pageTitle: String, sectionList: String, loginSection: String, mid: Long, mTitle: String, mContent: String, mActive: Long)
+
+@import Themes.EplSite._
+
+@htmlHeader(pageTitle)
+
+@{
+    var mStatSel1 = ""
+    var mStatSel2 = "checked"
+    if( mActive == 1 ) {
+        mStatSel1 = "checked";
+        mStatSel2 = "";
+    }
+
+    var pageContent = "<form action=\"/ManageMessage\" method=\"post\">"
+        pageContent += "<input type=\"hidden\" name=\"mid\" value=\"" + mid + "\">"
+        pageContent += "<br><b>Message Title:</b><br>"
+        pageContent += "<input type=\"text\" name=\"mtitle\" value=\"" + mTitle + "\" size=\"50\" maxlength=\"100\"><br><br>"
+        pageContent += "<b>Message Content:</b><br>"
+        pageContent += "<textarea name=\"mContent\" rows=\"15\" wrap=\"virtual\" cols=\"60\">" + mContent + "</textarea><br><br>"
+
+        pageContent += "<b>Is Active</b> <input type=\"radio\" name=\"active\" value=\"1\" " + mStatSel1 + ">Yes "
+        pageContent += "<input type=\"radio\" name=\"active\" value=\"0\" "+ mStatSel2 +">No"
+
+    pageHeader(sectionList, loginSection, pageContent)
+}
+
+@pageFooter()
+
+
